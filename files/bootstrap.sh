@@ -190,6 +190,8 @@ get_cpu_millicores_to_reserve() {
   echo $cpu_to_reserve
 }
 
+systemctl stop kubelet
+
 if [ -z "$CLUSTER_NAME" ]; then
     echo "CLUSTER_NAME is not defined"
     exit  1
